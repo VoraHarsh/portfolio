@@ -30,10 +30,11 @@ export default function About() {
           }} className="grid-cols-1 lg:grid-cols-[480px_1fr]">
             
             {/* Left - Image/GIF */}
-            <div style={{ position: 'sticky', top: '100px' }}>  {/* Sticky positioning */}
+            <div style={{ position: 'sticky', top: '100px', order: 1 }} className="about-image">  {/* Sticky positioning */}
               <div style={{
                 width: '100%',
                 height: '480px',  // Taller to match text
+                maxHeight: '480px',
                 borderRadius: '20px',
                 overflow: 'hidden',
                 boxShadow: '0 20px 50px rgba(59, 130, 246, 0.2)',
@@ -52,7 +53,7 @@ export default function About() {
             </div>
 
             {/* Right - Content */}
-            <div>
+            <div style={{ order: 2 }} className="about-content">
               {personalInfo.aboutText.map((text, i) => (
                 <p key={i} style={{ 
                   fontSize: '1.05rem', 

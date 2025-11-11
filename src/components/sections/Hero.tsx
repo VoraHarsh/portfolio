@@ -23,11 +23,11 @@ export default function Hero({ theme, roleIndex }: HeroProps) {
   return (
     <section id="home" style={{ minHeight: 'auto', padding: '8rem 2rem 4rem', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-primary)'}}>
       <div style={{ maxWidth: '1100px', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }} className="grid-cols-1 md:grid-cols-2">
-        <div>
+        <div style={{ order: 1 }}>
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
             {personalInfo.greeting}
           </p>
-          <h1 style={{ fontSize: '4rem', fontWeight: '700', marginBottom: '1rem', lineHeight: '1.1', color: theme === 'light' ? '#111827' : '#f1f5f9' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: '700', marginBottom: '1rem', lineHeight: '1.1', color: theme === 'light' ? '#111827' : '#f1f5f9' }}>
             {personalInfo.name}
           </h1>
           <div style={{ fontSize: '1.8rem', color: 'var(--text-secondary)', marginBottom: '2rem', height: '2.5rem' }}>
@@ -93,8 +93,8 @@ export default function Hero({ theme, roleIndex }: HeroProps) {
             </a>
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center' }} className="hidden md:flex">
-          <div style={{ position: 'relative', width: '420px', height: '420px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', order: 2 }} className="flex">
+          <div style={{ position: 'relative', width: '100%', maxWidth: '420px', height: 'auto', aspectRatio: '1/1' }}>
             {/* Animated Glowing Circle - Behind */}
             <div 
               style={{
@@ -116,8 +116,10 @@ export default function Hero({ theme, roleIndex }: HeroProps) {
             <div style={{
               position: 'relative',
               zIndex: 1,
-              width: '380px',
-              height: '380px',
+              width: '100%',
+              maxWidth: '380px',
+              height: 'auto',
+              aspectRatio: '1/1',
               margin: '20px auto',
               borderRadius: '50%',
               overflow: 'hidden',

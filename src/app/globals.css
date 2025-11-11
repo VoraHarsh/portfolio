@@ -115,3 +115,250 @@ section.fade-in {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-hover);
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Hero Section */
+  #home {
+    padding: 6rem 1rem 3rem !important;
+  }
+  
+  #home h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  #home > div {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  #home > div > div:first-child {
+    order: 1 !important;
+  }
+  
+  #home > div > div:last-child {
+    order: 2 !important;
+    display: flex !important;
+  }
+  
+  /* Header - Top right positioning for mobile */
+  .header-buttons {
+    top: 1rem !important;
+    right: 1rem !important;
+    flex-direction: row !important;
+    gap: 0.5rem !important;
+  }
+  
+  .header-buttons a,
+  .header-buttons button {
+    font-size: 0.85rem !important;
+    padding: 0.6rem 1rem !important;
+  }
+  
+  /* About Section */
+  #about {
+    padding: 3rem 1rem !important;
+  }
+  
+  #about > div > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .about-image {
+    position: static !important;
+    order: 1 !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .about-image > div {
+    height: auto !important;
+    max-height: 400px !important;
+    aspect-ratio: 1/1 !important;
+  }
+  
+  .about-content {
+    order: 2 !important;
+  }
+  
+  /* Experience Section */
+  #experience {
+    padding: 3rem 1rem !important;
+  }
+  
+  .experience-timeline {
+    padding-left: 1.5rem !important;
+  }
+  
+  .timeline-line {
+    left: 15px !important;
+  }
+  
+  .experience-card {
+    margin-left: 1rem !important;
+    padding: 1.5rem !important;
+    width: calc(100% - 1rem) !important;
+    max-width: 100% !important;
+  }
+  
+  .experience-card h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .experience-card h4 {
+    font-size: 1rem !important;
+  }
+  
+  .experience-card p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Skills Section */
+  #skills {
+    padding: 3rem 1rem !important;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+    gap: 1rem !important;
+    max-width: 100% !important;
+  }
+  
+  .skill-card {
+    width: 100% !important;
+    max-width: 120px !important;
+    padding: 1rem !important;
+    margin: 0 auto !important;
+  }
+  
+  .skill-card > div:first-child {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 1.5rem !important;
+  }
+  
+  .skill-card > div:last-child {
+    font-size: 0.8rem !important;
+  }
+  
+  /* Projects Section */
+  #projects {
+    padding: 3rem 1rem !important;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .project-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .project-card > div:first-child {
+    height: 200px !important;
+  }
+  
+  .project-card > div:last-child {
+    padding: 1.5rem !important;
+  }
+  
+  /* Education Section */
+  #education {
+    padding: 3rem 1rem !important;
+  }
+  
+  .education-card {
+    flex-direction: column !important;
+    padding: 1.5rem !important;
+  }
+  
+  .education-card > div:last-child {
+    text-align: left !important;
+    min-width: auto !important;
+    margin-top: 1rem !important;
+  }
+  
+  .certifications-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .certification-card {
+    width: 100% !important;
+  }
+  
+  /* Contact Section */
+  #contact {
+    padding: 3rem 1rem !important;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  .contact-info {
+    order: 1 !important;
+    text-align: center !important;
+  }
+  
+  .contact-form {
+    order: 2 !important;
+    padding: 1.5rem !important;
+  }
+  
+  .form-name-email {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 2rem 1rem !important;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+  }
+  
+  .footer-info {
+    order: 1 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .footer-info p {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .footer-social {
+    order: 2 !important;
+    justify-content: center !important;
+  }
+  
+  /* General - Full width for mobile */
+  section > div {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Adjust font sizes for mobile */
+  h2 {
+    font-size: 2rem !important;
+  }
+  
+  h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  /* Category tabs in skills */
+  #skills button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+}

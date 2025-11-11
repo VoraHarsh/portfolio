@@ -62,10 +62,11 @@ export default function Contact({ theme }: ContactProps) {
           gridTemplateColumns: '1fr 1.5fr', 
           gap: '4rem',
           alignItems: 'start',
-        }} className="grid-cols-1 lg:grid-cols-[1fr_1.5fr]">
+          width: '100%',
+        }} className="grid-cols-1 lg:grid-cols-[1fr_1.5fr] contact-grid">
           
           {/* Left Side - Contact Info */}
-          <div>
+          <div style={{ order: 1 }} className="contact-info">
             <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem', fontWeight: '700' }}>
               Let's Connect 🤝
             </h3>
@@ -153,9 +154,11 @@ export default function Contact({ theme }: ContactProps) {
             borderRadius: '20px',
             border: '1px solid var(--border)',
             boxShadow: 'var(--shadow-lg)',
-          }}>
+            order: 2,
+            width: '100%',
+          }} className="contact-form">
             <form onSubmit={handleContactSubmit}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }} className="form-name-email">
                 <div>
                   <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500', fontSize: '0.9rem', color: 'var(--text-primary)' }}>
                     Name

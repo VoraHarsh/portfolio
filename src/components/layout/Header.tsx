@@ -10,7 +10,7 @@ interface HeaderProps {
 
 export default function Header({ theme, toggleTheme }: HeaderProps) {
   return (
-    <div style={{ position: 'fixed', top: '2rem', right: '2rem', zIndex: 1000, display: 'flex', gap: '1rem', alignItems: 'center' }}>
+    <div style={{ position: 'fixed', top: '2rem', right: '2rem', zIndex: 1000, display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }} className="header-buttons">
       <a
         href={personalInfo.resumeUrl}
         target="_blank"

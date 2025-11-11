@@ -170,13 +170,16 @@ export default function Skills({ activeSkillTab, setActiveSkillTab, theme }: Ski
             justifyContent: 'center',
             maxWidth: '1020px',
             margin: '0 auto 3rem',
-          }}>
+            width: '100%',
+          }} className="skills-grid">
             {filteredSkills.map((skill) => (
               <div
                 key={skill.id}
                 style={{
                   backgroundColor: 'var(--card-bg)',
-                  width: '140px',
+                  width: '100%',
+                  maxWidth: '140px',
+                  margin: '0 auto',
                   padding: '1.5rem',
                   borderRadius: '16px',
                   textAlign: 'center',
@@ -184,6 +187,7 @@ export default function Skills({ activeSkillTab, setActiveSkillTab, theme }: Ski
                   transition: 'all 0.3s ease',
                   cursor: 'default',
                 }}
+                className="skill-card"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = '#3b82f6';
                   e.currentTarget.style.transform = 'translateY(-8px)';

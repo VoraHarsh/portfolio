@@ -10,7 +10,7 @@ export default function Projects() {
           <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', fontWeight: '700', color: 'var(--accent)' }}>Featured Projects</h2>
           <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)' }}>Some things I've built</p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }} className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', width: '100%' }} className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 projects-grid">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -20,7 +20,10 @@ export default function Projects() {
                 overflow: 'hidden',
                 border: '1px solid var(--border)',
                 transition: 'all 0.3s ease',
+                width: '100%',
+                maxWidth: '100%',
               }}
+              className="project-card"
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-8px)';
                 e.currentTarget.style.boxShadow = 'var(--shadow-lg)';

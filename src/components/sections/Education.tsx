@@ -40,7 +40,9 @@ export default function Education() {
                         display: 'flex',
                         justifyContent: 'space-between',
                         alignItems: 'start',
+                        width: '100%',
                         }}
+                        className="education-card"
                     >
                         <div style={{ flex: 1 }}>
                         <h4 style={{ fontSize: '1.3rem', fontWeight: '700', marginBottom: '0.5rem' }}>
@@ -73,7 +75,7 @@ export default function Education() {
                     <h3 style={{ fontSize: '1.5rem', marginBottom: '2rem', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent)' }}>
                     🏆 Certifications
                     </h3>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', width: '100%' }} className="certifications-grid">
                     {education.filter(item => item.type === 'certification').map((item) => (
                         <div
                         key={item.id}
@@ -83,7 +85,9 @@ export default function Education() {
                             borderRadius: '16px',
                             border: '1px solid var(--border)',
                             transition: 'all 0.3s ease',
+                            width: '100%',
                         }}
+                        className="certification-card"
                         >
                         <h4 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.5rem' }}>
                             {item.degree}
