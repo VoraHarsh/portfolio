@@ -9,10 +9,10 @@ export const personalInfo = {
   greeting: "Hi, my name is",
   description: "I’m a problem-solver at heart who loves turning ideas into working systems. Whether it’s designing backend infrastructure, building full-stack features, or integrating AI to enhance functionality and efficiency, I focus on creating solutions that are elegant, reliable, and built with purpose.",
   aboutText: [
-    "Hello! I'm Harsh, a software engineer passionate about designing scalable, reactive, and event-driven systems that make complex workflows simple and reliable.",
-    "I specialize in building backend and full-stack applications using Java 17, Spring Boot, Project Reactor, RabbitMQ, PostgreSQL, and Netflix Conductor, with hands-on experience in TypeScript, Playwright, and modern web development.",
-    "My work focuses on improving performance, reliability, and developer experience through clean architecture, automation, and efficient system design.I have hands-on experience across the full SDLC, from design, coding, and testing to deployment and production support, in Agile/Scrum environments.",
-    "Passionate about clean architecture, developer experience, and building maintainable, high-performance systems that scale reliably. I enjoy solving hard backend problems, optimizing data pipelines, reducing latency, and building resilient APIs."
+    "Hi, I’m Harsh 👋 - a curious problem solver and software engineer. What started as a love for gaming soon turned into a fascination with how those worlds were built, which led me to software engineering.",
+    "I design and develop reactive, event-driven, and high-performance applications that make complex workflows simple and reliable. My toolkit includes Java 17, Spring Boot, Project Reactor, RabbitMQ, PostgreSQL, and Netflix Conductor, with hands-on experience in TypeScript, React, and modern web development.",
+    "I’m big on clean architecture, automation, and developer experience, the kind of principles that make engineering both powerful and enjoyable. Over the years, I’ve worked across the full SDLC, from design and coding to testing, deployment, and production support, thriving in Agile/Scrum teams that value collaboration and continuous learning.",
+    "When I’m not coding, I enjoy exploring new food spots around the city, biking along Chicago’s lakefront, and staying active at the gym."
   ],
   resumeUrl: '/resume.pdf',
 };
@@ -44,7 +44,7 @@ export const experiences: Experience[] = [
     title: 'Graduate Teaching Assistant - Discrete Structures',
     company: 'Illinois Institute of Technology',
     duration: 'January 2021 - May 2021',
-    description: 'Developed RESTful APIs and middleware using Express.js, Passport.js, JWT & MongoDB Atlas cutting integration effort by 20%.'
+    description: 'Led weekly virtual office hours to support students, clarify course concepts, and guide them through assignments. Assisted the professor in preparing assignments and detailed solution sets and contributed to maintaining a smooth academic workflow for the course.'
   },
   {
     id: '5',
@@ -132,7 +132,7 @@ export const projects: Project[] = [
   {
     id: '1',
     title: 'Semantic Search Engine',
-    description: 'A full-stack e-commerce solution with real-time inventory management, payment integration, and admin dashboard.',
+    description: 'Developed a semantic movie search engine with an intuitive JSP-driven UI. Built a natural-language query algorithm using Microsoft LUIS for intent detection and integrated SPARQL queries on DBpedia to deliver accurate movie results.',
     technologies: ['Java', 'Jsp', 'SPARQL', 'Spring MVC'],
     links: {
       github: 'https://github.com/VoraHarsh/Projects/tree/master/Search%20Engine%20Based%20on%20Semantic%20Web-Java%20WebApp/WebApp',
@@ -144,7 +144,7 @@ export const projects: Project[] = [
   {
     id: '2',
     title: 'Movie Ticket Booking System',
-    description: 'A scalable chat platform with WebSocket support, user authentication, and group messaging features.',
+    description: 'Developed an Android-based movie ticket booking app using Java, Firebase, and MySQL. Enabled users to select theatres, choose movies and showtimes, view seating charts, reserve seats in real time, complete payments, and access their order history.',
     technologies: ['Android', 'Java', 'FireBase', 'MySQL'],
     links: {
       github: 'https://github.com/VoraHarsh/Projects/tree/master/Movie%20Ticket%20Booking%20System-Desktop%20Application',
@@ -155,7 +155,7 @@ export const projects: Project[] = [
   {
     id: '3',
     title: 'Online Book Store',
-    description: 'Machine learning model for image classification with 95% accuracy, deployed as a REST API.',
+    description: 'Built desktop and mobile applications for online book search and purchase, supporting title, author, and subject-based queries. Designed a real-time shopping cart that displays selected items, updates totals dynamically, and enables easy item removal.',
     technologies: ['Android', 'Java', 'FireBase', 'MySQL'],
     links: {
       github: 'https://github.com/VoraHarsh/Projects/tree/master/Online%20Book%20Store-Android%20Application/BookkarBooks/BookkarBooks',
@@ -171,7 +171,7 @@ export const education: Education[] = [
     degree: "Master's in Computer Science",
     institution: 'Illinois Institute of Technology',
     duration: '2019 - 2021',
-    description: "Currently pursuing a Bachelor's degree in Computer Science. As a second-year student, I'm building a strong foundation in algorithms, data structures, software engineering, and computer networks.",
+    description: 'Coursework: Algorithms, Artificial Intelligence, Advanced Operating Systems, Machine Learning, Deep Learning, Mobile Application Development, Enterprise Web Applications, Computer Vision, and Big Data Technologies.',
     type: 'education',
   },
   {
@@ -179,7 +179,7 @@ export const education: Education[] = [
     degree: "Bachelor's in Computer Engineering",
     institution: 'Mumbai University',
     duration: '2015 - 2019',
-    description: 'Focused on Mathematics, Physics, and Computer Studies. Participated in national coding competitions.',
+    description: 'Coursework: Data Structures, Analysis of Algorithms, Object-Oriented Design, Big Data Analysis, Database Management Systems, and Distributed Systems.',
     type: 'education',
   },
   // Add certifications

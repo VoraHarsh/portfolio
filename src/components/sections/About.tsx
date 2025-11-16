@@ -53,14 +53,14 @@ export default function About() {
             </div>
 
             {/* Right - Content */}
-            <div style={{ order: 2 }} className="about-content">
+            <div style={{ order: 2, textAlign: 'left' }} className="about-content">
               {personalInfo.aboutText.map((text, i) => (
                 <p key={i} style={{ 
                   fontSize: '1.05rem', 
                   color: 'var(--text-secondary)', 
                   lineHeight: '1.8', 
                   marginBottom: '1.5rem' 
-                }}>
+                }} className="about-text">
                   {text}
                 </p>
               ))}

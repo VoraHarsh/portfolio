@@ -120,25 +120,47 @@ section.fade-in {
 @media (max-width: 768px) {
   /* Hero Section */
   #home {
-    padding: 6rem 1rem 3rem !important;
+    padding: 6rem 1rem 2rem !important;
   }
   
-  #home h1 {
-    font-size: 2.5rem !important;
-  }
-  
-  #home > div {
+  .hero-container {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
   
-  #home > div > div:first-child {
+  .hero-content {
     order: 1 !important;
+    text-align: center !important;
   }
   
-  #home > div > div:last-child {
+  .hero-greeting {
+    font-size: 1rem !important;
+  }
+  
+  .hero-name {
+    font-size: 2rem !important;
+  }
+  
+  .hero-role {
+    font-size: 1.3rem !important;
+    height: auto !important;
+  }
+  
+  .hero-description {
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .hero-buttons {
+    justify-content: center !important;
+  }
+  
+  .hero-photo-container {
     order: 2 !important;
     display: flex !important;
+    margin-bottom: 1rem !important;
   }
   
   /* Header - Top right positioning for mobile */
@@ -178,6 +200,12 @@ section.fade-in {
   
   .about-content {
     order: 2 !important;
+    text-align: center !important;
+  }
+  
+  .about-text {
+    font-size: 0.95rem !important;
+    text-align: center !important;
   }
   
   /* Experience Section */
@@ -186,17 +214,27 @@ section.fade-in {
   }
   
   .experience-timeline {
-    padding-left: 1.5rem !important;
+    padding-left: 0 !important;
   }
   
   .timeline-line {
-    left: 15px !important;
+    display: none !important;
+  }
+  
+  .timeline-dot {
+    display: none !important;
+  }
+  
+  /* Ensure SideNav is hidden on mobile */
+  .sidenav,
+  nav.sidenav {
+    display: none !important;
   }
   
   .experience-card {
-    margin-left: 1rem !important;
+    margin-left: 0 !important;
     padding: 1.5rem !important;
-    width: calc(100% - 1rem) !important;
+    width: 100% !important;
     max-width: 100% !important;
   }
   
@@ -299,7 +337,15 @@ section.fade-in {
   
   .contact-info {
     order: 1 !important;
-    text-align: center !important;
+    text-align: left !important;
+  }
+  
+  .contact-info h3 {
+    text-align: left !important;
+  }
+  
+  .contact-info p {
+    text-align: left !important;
   }
   
   .contact-form {
@@ -309,6 +355,28 @@ section.fade-in {
   
   .form-name-email {
     grid-template-columns: 1fr !important;
+  }
+  
+  /* Toast Notification - Top middle of visible viewport on mobile */
+  .toast-notification {
+    top: 80px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: auto !important;
+    right: auto !important;
+    position: fixed !important;
+    max-width: calc(100% - 2rem) !important;
+    width: auto !important;
+  }
+  
+  /* Recommendations carousel - Mobile */
+  #recommendations {
+    padding: 2rem 1rem !important;
+  }
+  
+  /* Hide dots on mobile for cleaner look */
+  #recommendations > div > div > div > div:last-child {
+    display: flex !important;
   }
   
   /* Footer */
@@ -339,6 +407,10 @@ section.fade-in {
     justify-content: center !important;
   }
   
+  .footer-social > div {
+    justify-content: center !important;
+  }
+  
   /* General - Full width for mobile */
   section > div {
     max-width: 100% !important;
@@ -360,5 +432,69 @@ section.fade-in {
   #skills button {
     padding: 0.5rem 1rem !important;
     font-size: 0.8rem !important;
+  }
+}
+
+/* Desktop Toast Notification - Bottom right corner of visible viewport */
+@media (min-width: 769px) {
+  .toast-notification {
+    top: auto !important;
+    bottom: 2rem !important;
+    right: 2rem !important;
+    left: auto !important;
+    transform: none !important;
+    position: fixed !important;
+  }
+  
+  /* Footer desktop alignment */
+  .footer-info {
+    text-align: left !important;
+  }
+  
+  .footer-info p {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .footer-social {
+    justify-content: flex-end !important;
+  }
+  
+  .footer-social > div {
+    justify-content: flex-end !important;
+  }
+  
+  /* Recommendations carousel - Desktop */
+  .carousel-container {
+    max-width: 1000px !important;
+  }
+  
+  .measurement-container {
+    max-width: 1000px !important;
+  }
+  
+  .recommendation-card {
+    min-height: 550px !important;
+    padding: 3rem !important;
+  }
+  
+  .recommendation-text-container {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .recommendation-author {
+    flex-shrink: 0 !important;
+    position: relative !important;
+    padding-top: 2rem !important;
+    padding-bottom: 1.5rem !important;
+    margin-top: auto !important;
+  }
+  
+  .recommendation-text {
+    font-size: 1.15rem !important;
   }
 }

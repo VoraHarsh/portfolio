@@ -8,7 +8,7 @@ interface SideNavProps {
 
 export default function SideNav({ sections, activeSection, scrollToSection }: SideNavProps) {
   return (
-    <nav style={{ position: 'fixed', right: '2rem', top: '50%', transform: 'translateY(-50%)', zIndex: 999, display: 'flex', flexDirection: 'column', gap: '1rem' }} className="hidden md:flex">
+    <nav style={{ position: 'fixed', right: '2rem', top: '50%', transform: 'translateY(-50%)', zIndex: 999, display: 'flex', flexDirection: 'column', gap: '1rem' }} className="sidenav hidden md:flex">
       {sections.map((section) => (
         <button
           key={section}

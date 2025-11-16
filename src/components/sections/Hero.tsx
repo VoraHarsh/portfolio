@@ -22,23 +22,23 @@ export default function Hero({ theme, roleIndex }: HeroProps) {
 
   return (
     <section id="home" style={{ minHeight: 'auto', padding: '8rem 2rem 4rem', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--bg-primary)'}}>
-      <div style={{ maxWidth: '1100px', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }} className="grid-cols-1 md:grid-cols-2">
-        <div style={{ order: 1 }}>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+      <div style={{ maxWidth: '1100px', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center' }} className="grid-cols-1 md:grid-cols-2 hero-container">
+        <div style={{ order: 1, textAlign: 'left' }} className="hero-content">
+          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '1rem' }} className="hero-greeting">
             {personalInfo.greeting}
           </p>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: '700', marginBottom: '1rem', lineHeight: '1.1', color: theme === 'light' ? '#111827' : '#f1f5f9' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: '700', marginBottom: '1rem', lineHeight: '1.1', color: theme === 'light' ? '#111827' : '#f1f5f9' }} className="hero-name">
             {personalInfo.name}
           </h1>
-          <div style={{ fontSize: '1.8rem', color: 'var(--text-secondary)', marginBottom: '2rem', height: '2.5rem' }}>
+          <div style={{ fontSize: '1.8rem', color: 'var(--text-secondary)', marginBottom: '2rem', height: '2.5rem' }} className="hero-role">
             <span style={{ color: 'var(--accent)', fontWeight: '600' }}>
               {personalInfo.roles[roleIndex]}
             </span>
           </div>
-          <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '2rem', maxWidth: '600px' }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '2rem', maxWidth: '600px' }} className="hero-description">
             {personalInfo.description}
           </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-start' }} className="hero-buttons">
             <a
               href="#contact"
               style={{
@@ -93,7 +93,7 @@ export default function Hero({ theme, roleIndex }: HeroProps) {
             </a>
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', order: 2 }} className="flex">
+        <div style={{ display: 'flex', justifyContent: 'center', order: 2, marginBottom: '2rem' }} className="flex hero-photo-container">
           <div style={{ position: 'relative', width: '100%', maxWidth: '420px', height: 'auto', aspectRatio: '1/1' }}>
             {/* Animated Glowing Circle - Behind */}
             <div 

@@ -14,7 +14,7 @@ export default function Experience() {
         <div style={{ position: 'absolute', left: '47px', top: '0', height: '100%', width: '3px', backgroundColor: '#3b82f6', opacity: 0.5, }} className="timeline-line" />
           {experiences.map((exp) => (
             <div key={exp.id} style={{ position: 'relative', marginBottom: '3rem' }}>
-              <div style={{ position: 'absolute', left: '-10px', top: '2rem', width: '20px', height: '20px', backgroundColor: '#3b82f6', borderRadius: '50%', border: '4px solid var(--bg-primary)', boxShadow: '0 0 0 4px var(--bg-secondary)', zIndex: 2, }} />
+              <div style={{ position: 'absolute', left: '0px', top: '2rem', width: '20px', height: '20px', backgroundColor: '#3b82f6', borderRadius: '50%', border: '4px solid var(--bg-primary)', boxShadow: '0 0 0 4px var(--bg-secondary)', zIndex: 2, transform: 'translateX(-50%)' }} className="timeline-dot" />
               <div 
                 style={{
                   marginLeft: '2rem',

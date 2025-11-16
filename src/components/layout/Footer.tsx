@@ -18,14 +18,14 @@ export default function Footer() {
           width: '100%',
         }} className="grid-cols-1 md:grid-cols-[2fr_1fr] footer-content">
           {/* Left Side - Info */}
-          <div style={{ order: 1, textAlign: 'center' }} className="footer-info">
+          <div style={{ order: 1, textAlign: 'left' }} className="footer-info">
             <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1rem', color: 'var(--accent)' }}>
               {personalInfo.name}
             </h3>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '500px', marginLeft: 'auto', marginRight: 'auto' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '500px' }}>
               Creating digital infrastructure that inspires.
             </p>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '500px', marginLeft: 'auto', marginRight: 'auto' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', marginBottom: '1rem', maxWidth: '500px' }}>
               Passionate about clean code, user-focused design, and impact-driven tech.
             </p>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontStyle: 'italic' }}>
@@ -34,8 +34,8 @@ export default function Footer() {
           </div>
 
           {/* Right Side - Social Links */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'start', order: 2 }} className="footer-social">
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'start', order: 2 }} className="footer-social">
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-end' }}>
               {socialLinks.map(
                 (link) => (
                             <a 
