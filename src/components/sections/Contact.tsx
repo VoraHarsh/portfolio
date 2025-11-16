@@ -34,13 +34,7 @@ export default function Contact({ theme }: ContactProps) {
     };
 
     try {
-      console.log('Sending email with params:', templateParams);
-      console.log('Service ID:', serviceId);
-      console.log('Template ID:', templateId);
-      
       const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
-      
-      console.log('Email sent successfully:', response);
       
       setToastMessage('Message sent successfully! 🎉 I\'ll get back to you shortly.');
       setShowToast(true);

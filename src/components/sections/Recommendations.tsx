@@ -30,7 +30,6 @@ const TestimonialCarousel = ({ recommendations }: { recommendations: Recommendat
       if (heights.length > 0) {
         const max = Math.max(...heights);
         setMaxHeight(max);
-        console.log('Card heights:', heights, 'Max:', max);
       }
     };
 
