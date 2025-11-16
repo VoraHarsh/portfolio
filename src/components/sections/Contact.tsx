@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { personalInfo } from '@/data/portfolio';
+import emailjs from '@emailjs/browser';
 
 interface ContactProps {
   theme: 'light' | 'dark';
@@ -9,26 +10,68 @@ interface ContactProps {
 
 export default function Contact({ theme }: ContactProps) {
   const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     
-    const mailtoLink = `mailto:${personalInfo.email}?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(
-      `From: ${name} (${email})\n\n${message}`
-    )}`;
-    
-    window.location.href = mailtoLink;
-    e.currentTarget.reset();
+    // EmailJS configuration - REPLACE WITH YOUR IDS
+    const serviceId = 'Portfolio_Contact';
+    const templateId = 'template_08rr27f';
+    const publicKey = 'affrv4jP3xzYwtN34';
+
+    const templateParams = {
+      from_name: formData.get('name') as string,
+      from_email: formData.get('email') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
+      to_email: personalInfo.email, // Your email
+    };
+
+    try {
+      console.log('Sending email with params:', templateParams);
+      console.log('Service ID:', serviceId);
+      console.log('Template ID:', templateId);
+      
+      const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      console.log('Email sent successfully:', response);
+      
+      setToastMessage('Message sent successfully! 🎉 I\'ll get back to you shortly.');
+      setShowToast(true);
+      
+      // Reset form safely
+      if (form) {
+        form.reset();
+      }
+      
+      setTimeout(() => {
+        setShowToast(false);
+      }, 5000);
+    } catch (error: any) {
+      console.error('Failed to send email:', error);
+      console.error('Error details:', error.text || error.message);
+      
+      setToastMessage(`Failed to send message: ${error.text || error.message || 'Please try again or email me directly.'}`);
+      setShowToast(true);
+      
+      setTimeout(() => {
+        setShowToast(false);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(personalInfo.email);
+      setToastMessage('Email copied to clipboard! 📋');
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
@@ -111,6 +154,7 @@ export default function Contact({ theme }: ContactProps) {
                         cursor: 'pointer',
                         fontSize: '1rem',
                       }}
+                      aria-label="Copy email"
                     >
                       📋
                     </button>
@@ -170,6 +214,7 @@ export default function Contact({ theme }: ContactProps) {
                     name="name"
                     required
                     placeholder="Your name"
+                    disabled={isSubmitting}
                     style={{
                       width: '100%',
                       padding: '0.9rem',
@@ -178,6 +223,7 @@ export default function Contact({ theme }: ContactProps) {
                       borderRadius: '12px',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
+                      opacity: isSubmitting ? 0.6 : 1,
                     }}
                   />
                 </div>
@@ -190,6 +236,7 @@ export default function Contact({ theme }: ContactProps) {
                     name="email"
                     required
                     placeholder="Your email"
+                    disabled={isSubmitting}
                     style={{
                       width: '100%',
                       padding: '0.9rem',
@@ -198,6 +245,7 @@ export default function Contact({ theme }: ContactProps) {
                       borderRadius: '12px',
                       color: 'var(--text-primary)',
                       fontSize: '0.95rem',
+                      opacity: isSubmitting ? 0.6 : 1,
                     }}
                   />
                 </div>
@@ -212,6 +260,7 @@ export default function Contact({ theme }: ContactProps) {
                   name="subject"
                   required
                   placeholder="Subject"
+                  disabled={isSubmitting}
                   style={{
                     width: '100%',
                     padding: '0.9rem',
@@ -220,6 +269,7 @@ export default function Contact({ theme }: ContactProps) {
                     borderRadius: '12px',
                     color: 'var(--text-primary)',
                     fontSize: '0.95rem',
+                    opacity: isSubmitting ? 0.6 : 1,
                   }}
                 />
               </div>
@@ -233,6 +283,7 @@ export default function Contact({ theme }: ContactProps) {
                   required
                   placeholder="Your message"
                   rows={6}
+                  disabled={isSubmitting}
                   style={{
                     width: '100%',
                     padding: '0.9rem',
@@ -244,22 +295,24 @@ export default function Contact({ theme }: ContactProps) {
                     minHeight: '150px',
                     resize: 'vertical',
                     fontFamily: 'inherit',
+                    opacity: isSubmitting ? 0.6 : 1,
                   }}
                 />
               </div>
 
               <button
                 type="submit"
+                disabled={isSubmitting}
                 style={{
                   width: '100%',
                   padding: '1rem',
-                  backgroundColor: 'var(--accent)',
+                  backgroundColor: isSubmitting ? 'var(--border)' : 'var(--accent)',
                   color: 'white',
                   border: 'none',
                   borderRadius: '12px',
                   fontSize: '1rem',
                   fontWeight: '600',
-                  cursor: 'pointer',
+                  cursor: isSubmitting ? 'not-allowed' : 'pointer',
                   transition: 'all 0.3s ease',
                   display: 'flex',
                   alignItems: 'center',
@@ -267,7 +320,7 @@ export default function Contact({ theme }: ContactProps) {
                   gap: '0.5rem',
                 }}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'} {isSubmitting ? '⏳' : '✉️'}
               </button>
             </form>
           </div>
@@ -286,8 +339,9 @@ export default function Contact({ theme }: ContactProps) {
           boxShadow: 'var(--shadow-lg)',
           zIndex: 10000,
           animation: 'fadeInUp 0.3s ease-out',
+          maxWidth: '400px',
         }} className="toast-notification">
-          Copied to clipboard
+          {toastMessage}
         </div>
       )}
     </section>
