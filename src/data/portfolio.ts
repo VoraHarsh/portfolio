@@ -21,33 +21,40 @@ export const experiences: Experience[] = [
   {
     id: '1',
     title: 'Software Engineer',
-    company: 'GE Healthcare',
-    duration: 'June 2024 - Present',
-    description: 'Designed and optimized reactive, event-driven backend systems using Java 17, Spring Boot, Project Reactor, and RabbitMQ - improving data-pipeline scalability and real-time streaming efficiency across cloud platforms.'  
+    company: 'BrainRidge Consulting',
+    duration: 'January 2026 - Present',
+    description: 'Developed and enhanced Java Spring Boot microservices and REST APIs for banking applications, implementing external account management and loan payment functionalities. Improved application reliability through production defect resolution, ELK log analysis, unit testing, and Agile collaboration.'  
   },
   {
     id: '2',
+    title: 'Software Engineer',
+    company: 'GE HealthCare',
+    duration: 'June 2024 - November 2025',
+    description: 'Designed and optimized reactive, event-driven backend systems using Java 17, Spring Boot, Project Reactor, and RabbitMQ - improving data-pipeline scalability and real-time streaming efficiency across cloud platforms.'  
+  },
+  {
+    id: '3',
     title: 'Software Engineer Specialist',
-    company: 'GE Healthcare',
+    company: 'GE HealthCare',
     duration: 'October 2021 - June 2024',
     description: 'Engineered distributed microservices and REST APIs for healthcare imaging workflows, boosting throughput 3 - 5× and enhancing reliability through Docker-based deployments, testing automation, and Agile delivery.' 
   },
   {
-    id: '3',
+    id: '4',
     title: 'Software Developer Intern - MERN Stack',
     company: 'SQUADDD',
     duration: 'July 2021 - October 2021',
     description: 'Built RESTful APIs and middleware using Express.js, JWT, and MongoDB Atlas, improving backend integration by 20%. Collaborated with front-end teams in an Agile setup to design cohesive, secure, and scalable full-stack solutions.'
   },
   {
-    id: '4',
+    id: '5',
     title: 'Graduate Teaching Assistant - Discrete Structures',
     company: 'Illinois Institute of Technology',
     duration: 'January 2021 - May 2021',
     description: 'Led weekly virtual office hours to support students, clarify course concepts, and guide them through assignments. Assisted the professor in preparing assignments and detailed solution sets and contributed to maintaining a smooth academic workflow for the course.'
   },
   {
-    id: '5',
+    id: '6',
     title: 'Android Application Developer',
     company: 'M-Intellect Global',
     duration: 'May 2017 - July 2017',
